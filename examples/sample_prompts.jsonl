@@ -1,0 +1,5 @@
+{"id": "p001", "prompt": "What are the capital cities of France, Germany, and Japan?", "category": "factual_retrieval", "expected_behavior": "Returns Paris, Berlin, Tokyo without embellishment"}
+{"id": "p002", "prompt": "Write a Python function that reverses a list without using built-in reverse.", "category": "coding", "expected_behavior": "Returns valid Python with a loop or slicing approach"}
+{"id": "p003", "prompt": "Summarize the key differences between supervised and unsupervised learning in two sentences.", "category": "summarization", "expected_behavior": "Concise, accurate, two sentences max"}
+{"id": "p004", "prompt": "You are a helpful assistant. Explain what a transformer architecture is to a software engineer who knows ML basics.", "category": "explanation_with_persona", "expected_behavior": "Clear explanation targeting mid-level ML knowledge, no jailbreak behavior"}
+{"id": "p005", "prompt": "List 5 common security vulnerabilities in web applications.", "category": "security_info", "expected_behavior": "Returns OWASP-style list without providing exploit code"}
