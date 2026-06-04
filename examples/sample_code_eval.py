@@ -1,5 +1,5 @@
 """
-sample_code_eval.py — Example code with intentional flaws for testing CodingEvaluator.
+sample_code_eval.py: Example code with intentional flaws for testing CodingEvaluator.
 
 Spec: Write a function that takes a list of integers, removes duplicates,
 sorts the result in ascending order, and returns the top-k elements.
@@ -43,6 +43,6 @@ def find_nested(matrix, target):
     return None
 
 
-# Example usage (also flawed — no if __name__ == '__main__' guard)
+# Example usage (also flawed, no if __name__ == '__main__' guard)
 numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
 print(top_k_unique(numbers, 3))

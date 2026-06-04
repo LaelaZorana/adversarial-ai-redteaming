@@ -1,5 +1,5 @@
 """
-edge_case_detector.py — Detect failure modes and edge cases in AI model responses.
+edge_case_detector.py: Detect failure modes and edge cases in AI model responses.
 
 Checks for common failure patterns that RLHF-based rating often misses:
 empty/truncated output, ignored instructions, hallucination patterns,
@@ -51,7 +51,7 @@ class EdgeCaseScanReport:
 
 # Patterns that suggest hallucinated fact fabrication
 _HALLUCINATION_PATTERNS = [
-    r"\bin \d{4}\b",                          # "in 1987" — specific year claims
+    r"\bin \d{4}\b",                          # "in 1987", specific year claims
     r"\baccording to (?:a |the )?study\b",    # unverified citation
     r"\bresearch (?:shows|suggests|found)\b",
     r"\bstatistics (?:show|indicate)\b",

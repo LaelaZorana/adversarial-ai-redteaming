@@ -1,5 +1,5 @@
 """
-coding_evaluator.py — Evaluate AI-generated code for spec compliance, edge case handling,
+coding_evaluator.py: Evaluate AI-generated code for spec compliance, edge case handling,
 error handling, and overall quality. Designed for use in adversarial AI evaluation workflows.
 """
 
@@ -84,7 +84,7 @@ def _check_syntax(code: str) -> tuple[bool, Optional[str]]:
 def _check_spec_compliance(code: str, spec: str) -> tuple[bool, List[str]]:
     """
     Heuristic spec compliance: extract key nouns/verbs from spec and look for them in code.
-    Not semantic analysis — just coverage signal.
+    Not semantic analysis, just coverage signal.
     """
     # Extract function names or class names mentioned in spec
     func_mentions = re.findall(r'\b([a-z_][a-z0-9_]*)\s*\(', spec.lower())

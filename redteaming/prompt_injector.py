@@ -1,5 +1,5 @@
 """
-prompt_injector.py — Generate adversarial prompt injections using common attack techniques.
+prompt_injector.py: Generate adversarial prompt injections using common attack techniques.
 
 Each technique targets a different model vulnerability:
 - role_override: convince the model it has a different identity/role

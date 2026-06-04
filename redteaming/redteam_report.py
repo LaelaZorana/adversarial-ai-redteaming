@@ -1,5 +1,5 @@
 """
-redteam_report.py — Aggregate results from injection, edge case detection, and coding evaluation
+redteam_report.py: Aggregate results from injection, edge case detection, and coding evaluation
 into a unified Markdown + JSON report.
 """
 
