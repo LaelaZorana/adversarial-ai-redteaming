@@ -1,23 +1,23 @@
 # adversarial-ai-redteaming
 
-After doing AI evaluation work I kept noticing that standard RLHF rating catches obvious quality issues but misses the subtle ones — the responses that look fine on first read but fall apart under adversarial pressure. This toolkit is how I practice finding those.
+After doing AI evaluation work I kept noticing that standard RLHF rating catches obvious quality issues but misses the subtle ones, the responses that look fine on first read but fall apart under adversarial pressure. This toolkit is how I practice finding those.
 
 It covers three things I care about most in AI evaluation: generating adversarial prompt injections, scanning model outputs for edge case failures, and evaluating AI-generated code against specs with severity-tagged findings. Everything is composable and runs without any external API calls, so you can use it on any model's outputs.
 
 ## What It Does
 
-**`PromptInjector`** — generates adversarial prompt variants using five attack techniques:
-- `role_override` — convince the model it has a different identity
-- `instruction_ignore` — instruct the model to disregard prior context
-- `context_overflow` — bury instructions in noise to dilute attention
-- `delimiter_attack` — exploit prompt formatting to break structure
-- `indirect_injection` — embed instructions in data the model processes
+**`PromptInjector`** generates adversarial prompt variants using five attack techniques:
+- `role_override`: convince the model it has a different identity
+- `instruction_ignore`: instruct the model to disregard prior context
+- `context_overflow`: bury instructions in noise to dilute attention
+- `delimiter_attack`: exploit prompt formatting to break structure
+- `indirect_injection`: embed instructions in data the model processes
 
-**`EdgeCaseDetector`** — scans responses for failure modes that rating often misses: empty responses, truncated output, ignored instructions, hallucination patterns, format violations, safety bypass attempts, inconsistent reasoning.
+**`EdgeCaseDetector`** scans responses for failure modes that rating often misses: empty responses, truncated output, ignored instructions, hallucination patterns, format violations, safety bypass attempts, inconsistent reasoning.
 
-**`CodingEvaluator`** — evaluates AI-generated code for syntax validity, spec compliance, edge case handling, error handling, complexity, and documentation. Produces severity-tagged findings (CRITICAL → broken output, HIGH → missing edge case, MEDIUM → no error handling, LOW → style).
+**`CodingEvaluator`** evaluates AI-generated code for syntax validity, spec compliance, edge case handling, error handling, complexity, and documentation. Produces severity-tagged findings (CRITICAL → broken output, HIGH → missing edge case, MEDIUM → no error handling, LOW → style).
 
-**`RedTeamReport`** — aggregates all results into a single Markdown + JSON report with summary stats and recommendations.
+**`RedTeamReport`** aggregates all results into a single Markdown + JSON report with summary stats and recommendations.
 
 ## Quickstart
 
