@@ -70,9 +70,9 @@ class RedTeamReport:
     def recommendations(self) -> List[str]:
         recs = []
         if self.critical_findings > 0:
-            recs.append(f"Address {self.critical_findings} critical code issue(s) immediately — these indicate broken or non-functional outputs.")
+            recs.append(f"Address {self.critical_findings} critical code issue(s) immediately: these indicate broken or non-functional outputs.")
         if self.high_findings > 3:
-            recs.append("High failure rate on injection probes — model may be vulnerable to prompt manipulation. Consider hardening system prompt.")
+            recs.append("High failure rate on injection probes: model may be vulnerable to prompt manipulation. Consider hardening system prompt.")
         if not recs:
             recs.append("No critical issues found. Continue adversarial testing with expanded probe sets.")
         recs.append("Add more diverse injection techniques (multi-turn, indirect via tool calls).")
@@ -134,7 +134,7 @@ class RedTeamReport:
 
         for r in self.injection_results:
             if hasattr(r, "technique"):
-                lines.append(f"- **[{r.severity}]** `{r.technique}` — {r.expected_failure_mode}")
+                lines.append(f"- **[{r.severity}]** `{r.technique}`: {r.expected_failure_mode}")
 
         lines += [
             f"",
@@ -144,7 +144,7 @@ class RedTeamReport:
         all_edge = [item for batch in self.edge_case_results if isinstance(batch, list) for item in batch]
         if all_edge:
             for r in all_edge[:10]:
-                lines.append(f"- **[{r.severity}]** `{r.case_type}` — {r.observation}")
+                lines.append(f"- **[{r.severity}]** `{r.case_type}`: {r.observation}")
         else:
             lines.append("No edge cases detected.")
 
